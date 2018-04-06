@@ -1,0 +1,16 @@
+{% extends "timeBase.html" %}
+
+{% block title %}Note Dir{% endblock %}
+
+{% block content %}
+    {% for file in files %}
+        {{ file }}
+    {% endfor %}
+
+    {% comment %}
+    <p>It is now {{ current_date }}.</p>
+    {% for line in log %}
+        <p>{{ line }}</p>
+    {% endfor %}
+    {% endcomment %}
+{% endblock %}
