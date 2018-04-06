@@ -7,6 +7,9 @@ from django.template import Context
 from django.shortcuts import render
 from glossGen.settings import PROJECT_ROOT
 from glossGen.forms import UploadFileForm
+from .keywordExtraction.GGkeyphrase import GGkeyphrase
+import wikipedia
+from .GG import GGmain
 
 result = [[("keyphrase","defintion"), ("keyphrase","defintion")], [("keyphrase","defintion")]]
 
@@ -18,9 +21,13 @@ def upload(request):
 
 def handleUploadedFile(f):
     global result
-    for chunk in f.chunks():
-        print(chunk)
-    result = [[("keyphrase","defintion"), ("keyphrase","defintion")], [("keyphrase","defintion")]]
+    with open('target.txt', 'wb+') as dst:
+        for chunk in f.chunks():
+            dst.write(chunk)
+            #print(chunk)
+    #keywords = GGkeyphrase()
+    result = GGmain()
+    #result = [[("keyphrase","defintion"), ("keyphrase","defintion")], [("keyphrase","defintion")]]
 
 def uploadTarget(request):
     if request.method == 'POST':

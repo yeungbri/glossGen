@@ -28,15 +28,3 @@ urlpatterns = [
     path('test', test),
     path('', upload),
 ]
-
-# urlpatterns = [
-#     url(r'^admin/', admin.site.urls),
-#     url(r'^hello/$', hello),
-#     url(r'^$', home),
-#     url(r'^time/$', curDateTime),
-#     url(r'^time/plus/(\d{1,2})/$', hours_ahead),
-#     url(r'^timelog/$', timeBase),
-#     url(r'^log/$', log),
-#     url(r'^notedir/$', notedir),
-#     url(r'^note/view/<filename>', viewnote),
-# ]
