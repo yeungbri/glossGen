@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block content %} 
+
+{% load static %}
+<link rel="stylesheet" href="{% static "/css/dropzone.css" %}">
+{% load static %}
+<script src="{% static "/js/dropzone.js" %}"></script>
+
+<!-- <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js "></script> -->
+<!-- <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css"> -->
+
+
+<div class="splash-container ">
+    <div class="splash">
+        <h1 class="splash-head">Glossary Generator</h1>
+        <form action="/uploadTarget" class="dropzone"></form>
+        <p class="splash-subhead ">
+            .txt and .pdf supported
+        </p>
+        <p>
+            <a href="/gloss" class="pure-button pure-button-primary ">Upload</a>
+        </p>
+        <!-- <script>var myDropzone = new Dropzone("div#myId", { url: "/file/post"});</script> -->
+    </div>
+</div>
+{% endblock %}

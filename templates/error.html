@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block content %} 
+
+{% load static %}
+<link rel="stylesheet" href="{% static "/css/dropzone.css" %}">
+{% load static %}
+<script src="{% static "/js/dropzone.js" %}"></script>
+
+<!-- <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js "></script> -->
+<!-- <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css"> -->
+
+
+<div class="splash-container ">
+    <div class="splash">
+        <p class="splash-subhead ">
+            {{error}}
+        </p>
+    </div>
+</div>
+{% endblock %}

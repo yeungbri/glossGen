@@ -1,16 +1,49 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Glossary generation tool">
     <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    
+        <!--[if lte IE 8]>
+            {% load static %}
+            <link rel="stylesheet" href="{% static "/css/layouts/marketing-old-ie.css.css" %}">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            {% load static %}
+            <link rel="stylesheet" href="{% static "/css/layouts/marketing.css" %}">
+        <!--<![endif]-->
 </head>
-<body>    
-    {% block content %}{% endblock %}
 
-    {% block footer %}
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">glossGen</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+    {% block content %}{% endblock %} {% block footer %}
     <hr>
     <p>Thanks for visiting my site.</p>
     {% endblock %}
 </body>
+
 </html>
